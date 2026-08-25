@@ -1,10 +1,100 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TripKIRA Download</title><link rel="stylesheet" href="style.css"></head><body><div class="wrap">
-<section class="hero"><img src="tripkira_banner.png" alt="TripKIRA"></section>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TripKIRA Download</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<section class="hero">
+  <img src="tripkira_banner.png" alt="TripKIRA">
+</section>
+
 <nav>
-<a href="index.html">Download</a>
-<a href="videos.html">Videos</a>
-<a href="faq.html">FAQ</a>
-<a href="login.html">Login</a>
+  <a class="active" href="index.html">Download</a>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLScC-nFEACtFdiGBws3zrzF44dGTFwLKLMNag9fK2xooNIYN-Q/viewform?usp=header" target="_blank" rel="noopener">Registration</a>
+  <a href="videos.html">Videos</a>
+  <a href="faq.html">FAQ</a>
+  <a href="login.html">Login</a>
 </nav>
-<section class="card" style="text-align:center"><img class="icon" src="tripkira_icon.png" alt="TripKIRA icon"><h1>TripKIRA</h1><p class="muted">Every Trip Counts</p><p><b>Latest version:</b> <span id="ver">v3.31</span></p><a class="download-btn" id="download" href="#">DOWNLOAD TRIPKIRA</a><p class="muted">Android may ask permission to install an APK outside Google Play.</p></section>
-</div><script src="config.js"></script><script>const c=window.TRIPKIRA_CONFIG||{};document.getElementById('ver').textContent=c.version||'v3.31';const b=document.getElementById('download');if(c.apkUrl&&!c.apkUrl.startsWith('PASTE_'))b.href=c.apkUrl;else b.onclick=e=>{e.preventDefault();alert('APK link is not configured yet.')};</script></body></html>
+
+<section class="card" style="text-align:center">
+  <img class="icon" src="tripkira_icon.png" alt="TripKIRA icon">
+  <h1>TripKIRA</h1>
+  <p class="muted">Every Trip Counts</p>
+  <p><b>Latest version:</b> <span id="ver">v3.31</span></p>
+  <a class="download-btn" id="download" href="#">DOWNLOAD TRIPKIRA</a>
+  <p class="muted">
+    Android may ask permission to install an APK outside Google Play.
+  </p>
+</section>
+
+<section class="card" style="text-align:center">
+  <h2>Membership Registration</h2>
+  <p class="muted">
+    New drivers can register here to obtain a TripKIRA Membership ID.
+  </p>
+  <a class="download-btn registration-btn"
+     href="https://docs.google.com/forms/d/e/1FAIpQLScC-nFEACtFdiGBws3zrzF44dGTFwLKLMNag9fK2xooNIYN-Q/viewform?usp=header"
+     target="_blank"
+     rel="noopener">
+     REGISTER FOR TRIPKIRA MEMBERSHIP
+  </a>
+</section>
+
+<section class="card" style="text-align:center">
+  <h2>Scan to download TripKIRA</h2>
+  <div id="qrcode"></div>
+  <p id="pageurl" class="muted"></p>
+</section>
+
+<section class="card">
+  <h2>Installation</h2>
+  <ol class="install-steps">
+    <li>Scan the QR code.</li>
+    <li>Tap <b>DOWNLOAD TRIPKIRA</b>.</li>
+    <li>Open the downloaded APK.</li>
+    <li>Allow installation from this source if Android asks.</li>
+    <li>Tap <b>Install</b>, then open TripKIRA.</li>
+  </ol>
+</section>
+
+</div>
+
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<script>
+(function () {
+  const cfg = window.TRIPKIRA_CONFIG || {};
+
+  document.getElementById("ver").textContent = cfg.version || "v3.31";
+
+  const downloadButton = document.getElementById("download");
+  if (cfg.apkUrl && !cfg.apkUrl.startsWith("PASTE_")) {
+    downloadButton.href = cfg.apkUrl;
+  } else {
+    downloadButton.href = "#";
+    downloadButton.addEventListener("click", function (event) {
+      event.preventDefault();
+      alert("TripKIRA APK link has not been configured yet.");
+    });
+  }
+
+  const pageUrl = "https://tripskira.github.io/tripkira-download/";
+  document.getElementById("pageurl").textContent = pageUrl;
+
+  if (window.QRCode) {
+    new QRCode(document.getElementById("qrcode"), {
+      text: pageUrl,
+      width: 220,
+      height: 220,
+      correctLevel: QRCode.CorrectLevel.M
+    });
+  }
+})();
+</script>
+</body>
+</html>

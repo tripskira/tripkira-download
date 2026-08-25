@@ -24,3 +24,23 @@ summary{cursor:pointer;font-weight:700}
 .icon{width:105px;height:105px;border-radius:24px;object-fit:contain}
 .download-btn{display:block;text-align:center;background:linear-gradient(135deg,var(--green),var(--teal));color:#fff;text-decoration:none;font-weight:800;font-size:19px;padding:16px;border-radius:14px}
 @media(max-width:650px){.grid{grid-template-columns:1fr}.card{margin:12px;padding:17px}nav{position:static}}
+
+.registration-btn{
+  background:linear-gradient(135deg,#ffb52a,#f59e0b);
+  color:#10231f;
+}
+#qrcode{
+  width:220px;
+  min-height:220px;
+  margin:14px auto;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+#qrcode img,#qrcode canvas{
+  max-width:220px!important;
+  height:auto!important;
+}
+.install-steps{
+  line-height:1.75;
+}
