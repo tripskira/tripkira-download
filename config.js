@@ -1,5 +1,5 @@
 window.TRIPKIRA_CONFIG={
-  version:"v3.31",
-  apkFileName:"TripKIRA-v3.31.apk",
-  apkUrl:"https://github.com/tripskira/tripkira-download/releases/download/v3.31/TripLogger_v3_3_1.apk"
+  version:"v3.32",
+  apkFileName:"TripKIRA-v3.32.apk",
+  apkUrl:"https://github.com/tripskira/tripkira-download/releases/download/v3.32/TripLogger_v3_3_2.apk"
 };
